@@ -1,4 +1,4 @@
 class Opinion < ApplicationRecord
-    belongs_to :User
-    has_many :Ratings
+    belongs_to :user
+    has_many :ratings
 end

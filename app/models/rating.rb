@@ -1,4 +1,4 @@
 class Rating < ApplicationRecord
-    belongs_to :Opinion
-    belongs_to :User
+    belongs_to :opinion
+    belongs_to :user
 end
