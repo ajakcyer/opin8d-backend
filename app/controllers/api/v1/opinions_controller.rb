@@ -10,4 +10,21 @@ class Api::V1::OpinionsController < ApplicationController
         render json: opinion
     end
 
+    def create
+        opinion = Opinion.create!(user_params)
+        
+        # byebug
+        if opinion.valid?
+            render json: opinion
+        else
+            render json: {error: "invalid params"}
+        end
+    end
+
+    private
+
+    def user_params
+        params.require(:opinion).permit(:user_id, :title, :content)
+    end
+
 end
