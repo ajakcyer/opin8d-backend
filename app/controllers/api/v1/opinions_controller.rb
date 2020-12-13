@@ -11,7 +11,7 @@ class Api::V1::OpinionsController < ApplicationController
     end
 
     def create
-        opinion = Opinion.create!(user_params)
+        opinion = Opinion.create!(opinion_params)
         
         # byebug
         if opinion.valid?
@@ -21,9 +21,18 @@ class Api::V1::OpinionsController < ApplicationController
         end
     end
 
+    def patch
+        opinion = Opinion.find(params[:id])
+
+        byebug
+
+        opinion.update(opinion_params)
+        render json: opinion
+    end
+
     private
 
-    def user_params
+    def opinion_params
         params.require(:opinion).permit(:user_id, :title, :content)
     end
 
