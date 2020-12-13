@@ -30,6 +30,15 @@ class Api::V1::OpinionsController < ApplicationController
         render json: opinion
     end
 
+    def destroy
+        opinion = Opinion.find(params[:id])
+        byebug
+
+        opinion.destroy
+
+        render json: {}
+    end
+
     private
 
     def opinion_params
