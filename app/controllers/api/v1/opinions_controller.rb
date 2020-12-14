@@ -21,10 +21,10 @@ class Api::V1::OpinionsController < ApplicationController
         end
     end
 
-    def patch
+    def update
         opinion = Opinion.find(params[:id])
 
-        byebug
+        # byebug
 
         opinion.update(opinion_params)
         render json: opinion
@@ -32,7 +32,7 @@ class Api::V1::OpinionsController < ApplicationController
 
     def destroy
         opinion = Opinion.find(params[:id])
-        byebug
+        # byebug
 
         opinion.destroy
 
