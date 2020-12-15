@@ -12,7 +12,7 @@ class Api::V1::RatingsController < ApplicationController
 
     def create
         rating = Rating.create!(rating_params)
-        byebug
+        # byebug
 
         if rating.valid?
             render json: rating
@@ -21,13 +21,22 @@ class Api::V1::RatingsController < ApplicationController
         end
     end
 
-    def patch
+    def update
         rating = Rating.find(params[:id])
 
-        byebug
+        # byebug
 
         rating.update(rating_params)
         render json: rating
+    end
+
+    def destroy
+        rating = Rating.find(params[:id])
+
+        # byebug
+
+        rating.destroy
+        render json: {}
     end
 
     private
