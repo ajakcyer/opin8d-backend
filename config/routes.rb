@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :users
       resources :opinions
       resources :ratings
+      post '/login', to: 'auth#create'
     end
   end
 end
