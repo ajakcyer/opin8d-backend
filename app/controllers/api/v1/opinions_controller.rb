@@ -1,5 +1,7 @@
 class Api::V1::OpinionsController < ApplicationController
 
+    skip_before_action :authorized, only: [:index, :show]
+
     def index
         opinions = Opinion.all
         render json: opinions

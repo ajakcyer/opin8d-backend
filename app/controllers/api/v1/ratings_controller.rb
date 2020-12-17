@@ -1,5 +1,7 @@
 class Api::V1::RatingsController < ApplicationController
 
+    skip_before_action :authorized, only: [:index, :show]
+
     def index
         ratings = Rating.all
         render json: ratings
