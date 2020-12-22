@@ -1,13 +1,12 @@
 class OpinionSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :content, :title, :ratings, :other_images
+  attributes :id, :content, :title, :ratings, :other_image
   belongs_to :user
 
-  def other_images
-    if object.other_images.attached?
+  def other_image
+    if object.other_image.attached?
       # binding.pry
-      object.other_images.map { |image| rails_blob_url(image) }
-      # { url: rails_blob_url(object.other_images) }
+      { url: rails_blob_url(object.other_image) }
     end
   end
 

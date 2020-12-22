@@ -5,5 +5,5 @@ class Opinion < ApplicationRecord
     # attr_accessor :remove_main_image
 
     # has_rich_text :text_content
-    has_many_attached :other_images, dependent: :destroy
+    has_one_attached :other_image, dependent: :destroy
 end
