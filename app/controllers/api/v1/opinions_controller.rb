@@ -15,7 +15,7 @@ class Api::V1::OpinionsController < ApplicationController
     def create
         opinion = Opinion.create!(opinion_params)
         
-        # byebug
+        byebug
         if opinion.valid?
             render json: opinion
         else
@@ -44,7 +44,7 @@ class Api::V1::OpinionsController < ApplicationController
     private
 
     def opinion_params
-        params.require(:opinion).permit(:user_id, :title, :content)
+        params.require(:opinion).permit(:user_id, :title, :content, other_images: [])
     end
 
 end

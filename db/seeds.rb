@@ -17,7 +17,7 @@ ajak = User.create!(
 Cyer = User.create!(
     first_name: "Cyer",
     last_name: "Cyer",
-    username: "cyeryer",
+    username: "cyercyer",
     password: "123",
     email: "cyercyer@gmail.com"
 )
