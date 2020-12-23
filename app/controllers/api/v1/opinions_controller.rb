@@ -13,9 +13,16 @@ class Api::V1::OpinionsController < ApplicationController
     end
 
     def create
-        opinion = Opinion.create!(opinion_params)
-        
         # byebug
+        opinion = Opinion.create!(opinion_params)
+
+        if params[:other_image].class != String
+            # byebug
+            opinion.other_image.attach(params[:other_image])
+        end
+
+        # byebug
+
         if opinion.valid?
             render json: opinion
         else
@@ -44,7 +51,7 @@ class Api::V1::OpinionsController < ApplicationController
     private
 
     def opinion_params
-        params.require(:opinion).permit(:user_id, :title, :content)
+        params.permit(:user_id, :title, :content)
     end
 
 end
