@@ -1,0 +1,2 @@
+class OpinionCategory < ApplicationRecord
+end
