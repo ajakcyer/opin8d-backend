@@ -2,6 +2,7 @@ class Opinion < ApplicationRecord
     belongs_to :user
     has_many :ratings
     has_many :opinion_categories
+    has_many :categories, through: :opinion_categories
 
     # attr_accessor :remove_main_image
 
