@@ -6,6 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+category_list = [
+    "Arts",
+    "Entertainment",
+    "Culture",
+    "Equality",
+    "Health",
+    "Industry",
+    "Personal Development",
+    "Politics",
+    "Programming",
+    "Science",
+    "Self",
+    "Society",
+    "Technology"
+]
+
+category_list.each { |category| Category.create!(name: category)}
+
 ajak = User.create!(
     first_name: "Ajak",
     last_name: "Cyer",
@@ -37,5 +55,12 @@ Cyer = User.create!(
         user_id: User.all.sample.id,
         title: Faker::Book.title,
         content: Faker::Lorem.paragraphs.join(" ")
+    )
+}
+
+30.times {
+    OpinionCategory.create!(
+        opinion_id: Opinion.all.sample.id,
+        category_id: Category.all.sample.id
     )
 }
