@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       resources :users
       resources :opinions
       resources :ratings
+      resources :user_categories
+      resources :opinion_categories
+      resources :categories
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
     end

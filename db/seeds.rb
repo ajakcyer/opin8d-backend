@@ -64,3 +64,10 @@ Cyer = User.create!(
         category_id: Category.all.sample.id
     )
 }
+
+15.times {
+    UserCategory.create!(
+        user_id: User.all.sample.id,
+        category_id: Category.all.sample.id
+    )
+}
