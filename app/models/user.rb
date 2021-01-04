@@ -4,7 +4,6 @@ class User < ApplicationRecord
     has_many :opinions
     has_many :user_categories
     has_many :categories, through: :user_categories
-    belongs_to :message, optional: true
 
     has_one_attached :avatar, dependent: :destroy
     

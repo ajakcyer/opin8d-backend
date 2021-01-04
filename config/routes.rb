@@ -12,7 +12,6 @@ Rails.application.routes.draw do
       resources :user_categories
       resources :opinion_categories
       resources :categories
-      resources :messages
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
     end
