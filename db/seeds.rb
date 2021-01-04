@@ -22,6 +22,8 @@ category_list = [
     "Technology"
 ]
 
+general = Category.create!(name: "General")
+
 category_list.each { |category| Category.create!(name: category)}
 
 ajak = User.create!(
@@ -71,3 +73,12 @@ Cyer = User.create!(
         category_id: Category.all.sample.id
     )
 }
+
+Opinion.all.each do |opinion|
+    if opinion.categories.length < 0
+        OpinionCategory.create!(
+            opinion_id: opinion.id,
+            category_id: general.id
+        )
+    end
+end
