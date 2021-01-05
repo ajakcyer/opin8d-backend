@@ -23,7 +23,7 @@ class Api::V1::OpinionsController < ApplicationController
         # byebug
 
         categories = params[:category_array].split(',')
-
+        # byebug
         if categories.length > 0
             categories.each do |category|
                 foundCat = Category.find_by(name: category)
